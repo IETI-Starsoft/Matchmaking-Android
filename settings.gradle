@@ -1,0 +1,2 @@
+rootProject.name='Matchmaking-Android'
+include ':app'
