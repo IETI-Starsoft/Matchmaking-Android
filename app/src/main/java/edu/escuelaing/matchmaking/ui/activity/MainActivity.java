@@ -1,8 +1,10 @@
-package edu.escuelaing.matchmaking;
+package edu.escuelaing.matchmaking.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import edu.escuelaing.matchmaking.R;
 
 public class MainActivity extends AppCompatActivity {
 
