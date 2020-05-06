@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitNetwork {
 
-    private static final String BASE_URL = "http://192.168.1.11:8080/";
+    private static final String BASE_URL = "http://matchmaking-iback.herokuapp.com/";
 
     private AuthService authService;
 

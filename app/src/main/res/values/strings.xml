@@ -10,4 +10,22 @@
     <string name="server_error_message">Error connecting to the server. Please try again</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="credential_error">Check your credentials</string>
+    <string name="options">Options</string>
+    <string name="logout">Logout</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Matchmaking</string>
+    <string name="nav_header_subtitle">Menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="amigos">Amigos</string>
+    <string name="mis_equipos">Mis Equipos</string>
+    <string name="mis_matches">Mis Matches Individual</string>
+    <string name="mis_matches_team">Mis Matches Equipo</string>
+    <string name="crear_match">Crear Match</string>
+    <string name="crear_equipo">Crear Equipo</string>
+    <string name="buscar_match">Buscar Match</string>
+    <string name="anadir_amigo">Añadir Amigo</string>
+    <string name="transferir">Transferir Crèditos</string>
+    <string name="edit_profile">Editar Perfil</string>
 </resources>

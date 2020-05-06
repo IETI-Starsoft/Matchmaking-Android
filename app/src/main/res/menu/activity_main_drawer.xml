@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+
+    </group>
+
+
+
+            <item
+                android:id="@+id/nav_amigos"
+                android:icon="@drawable/amigos"
+                android:title="@string/amigos" />
+            <item
+                android:id="@+id/nav_mis_equipos"
+                android:icon="@drawable/mis_equipos"
+                android:title="@string/mis_equipos" />
+            <item
+                android:id="@+id/nav_mis_matches"
+                android:icon="@drawable/mis_matches"
+                android:title="@string/mis_matches" />
+            <item
+                android:id="@+id/nav_mis_matches_team"
+                android:icon="@drawable/mis_matches"
+                android:title="@string/mis_matches_team" />
+            <item
+                android:id="@+id/nav_crear_match"
+                android:icon="@drawable/crear_match"
+                android:title="@string/crear_match" />
+            <item
+                android:id="@+id/nav_crear_equipo"
+                android:icon="@drawable/crear_equipo"
+                android:title="@string/crear_equipo" />
+            <item
+                android:id="@+id/nav_buscar_match"
+                android:icon="@drawable/buscar_match"
+                android:title="@string/buscar_match" />
+            <item
+                android:id="@+id/nav_anadir_amigo"
+                android:icon="@drawable/anadir_amigo"
+                android:title="@string/anadir_amigo" />
+            <item
+                android:id="@+id/nav_transferir"
+                android:icon="@drawable/transferir"
+                android:title="@string/transferir" />
+            <item
+                android:id="@+id/nav_edit"
+                android:icon="@drawable/edit"
+                android:title="@string/edit_profile" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout"
+                android:title="@string/logout" />
+
+
+</menu>
