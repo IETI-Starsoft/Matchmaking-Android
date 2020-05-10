@@ -5,11 +5,7 @@
 
     <group android:checkableBehavior="single">
 
-
     </group>
-
-
-
             <item
                 android:id="@+id/nav_amigos"
                 android:icon="@drawable/amigos"
