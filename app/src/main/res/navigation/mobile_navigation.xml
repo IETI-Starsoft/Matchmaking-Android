@@ -3,8 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_amigos">
+    app:startDestination="@id/nav_perfil">
 
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.PerfilFragment"
+        android:label="@string/perfil"
+        tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/nav_amigos"
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.AmigosFragment"
@@ -50,6 +55,11 @@
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.TransferirCreditosFragment"
         android:label="@string/transferir"
         tools:layout="@layout/fragment_transferir_creditos" />
+    <fragment
+        android:id="@+id/nav_edit"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.EditarPerfilFragment"
+        android:label="@string/edit_profile"
+        tools:layout="@layout/fragment_editar_perfil" />
     <fragment
         android:id="@+id/nav_edit"
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.EditarPerfilFragment"
