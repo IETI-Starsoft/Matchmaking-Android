@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,8 @@ public class PerfilFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_perfil, container, false);
         final TextView textView = root.findViewById(R.id.name_perfil);
         final ImageView imageView = root.findViewById(R.id.userImage);
+        final RatingBar ratingBar = root.findViewById(R.id.ratingBar);
+        ratingBar.setIsIndicator(true);
         perfilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -49,6 +52,13 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onChanged(Bitmap image) {
                 imageView.setImageBitmap(image);
+            }
+        });
+
+        perfilViewModel.getUserRating().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                ratingBar.setRating(integer);
             }
         });
         return root;
