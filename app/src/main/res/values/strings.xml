@@ -28,4 +28,5 @@
     <string name="anadir_amigo">Añadir Amigo</string>
     <string name="transferir">Transferir Crèditos</string>
     <string name="edit_profile">Editar Perfil</string>
+    <string name="perfil">Perfil</string>
 </resources>

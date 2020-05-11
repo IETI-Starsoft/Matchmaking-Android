@@ -1,4 +1,4 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,18 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import edu.escuelaing.matchmaking.R;
+import edu.escuelaing.matchmaking.ui.menu.viewmodel.MisMatchesTeamViewModel;
 
-public class TransferirCreditosFragment extends Fragment{
+public class MisMatchesTeamFragment extends Fragment{
 
-    private TransferirCreditosViewModel transferirCreditosViewModel;
+    private MisMatchesTeamViewModel misMatchesTeamViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        transferirCreditosViewModel =
-                ViewModelProviders.of(this).get(TransferirCreditosViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_transferir_creditos, container, false);
-        final TextView textView = root.findViewById(R.id.text_transferir_creditos);
-        transferirCreditosViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        misMatchesTeamViewModel =
+                ViewModelProviders.of(this).get(MisMatchesTeamViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_mis_matches_equipo, container, false);
+        final TextView textView = root.findViewById(R.id.text_mis_matches_equipo);
+        misMatchesTeamViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

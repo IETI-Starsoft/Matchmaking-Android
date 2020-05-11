@@ -1,4 +1,4 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,18 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import edu.escuelaing.matchmaking.R;
+import edu.escuelaing.matchmaking.ui.menu.viewmodel.AnadirAmigoViewModel;
 
-public class MisMatchesTeamFragment extends Fragment{
+public class AnadirAmigoFragment extends Fragment{
 
-    private MisMatchesTeamViewModel misMatchesTeamViewModel;
+    private AnadirAmigoViewModel anadirAmigoViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        misMatchesTeamViewModel =
-                ViewModelProviders.of(this).get(MisMatchesTeamViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_mis_matches_equipo, container, false);
-        final TextView textView = root.findViewById(R.id.text_mis_matches_equipo);
-        misMatchesTeamViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        anadirAmigoViewModel =
+                ViewModelProviders.of(this).get(AnadirAmigoViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_anadir_amigo, container, false);
+        final TextView textView = root.findViewById(R.id.text_anadir_amigos);
+        anadirAmigoViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

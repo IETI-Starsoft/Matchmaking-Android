@@ -1,16 +1,16 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AnadirAmigoViewModel extends ViewModel {
+public class MisMatchesIndViewModel extends ViewModel{
 
     private MutableLiveData<String> mText;
 
-    public AnadirAmigoViewModel() {
+    public MisMatchesIndViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is añadir amigos fragment");
+        mText.setValue("This is mis matches ind fragment");
     }
 
     public LiveData<String> getText() {

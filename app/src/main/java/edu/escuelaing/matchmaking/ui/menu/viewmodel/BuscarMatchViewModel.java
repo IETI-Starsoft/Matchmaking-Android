@@ -1,16 +1,16 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MisMatchesIndViewModel extends ViewModel{
+public class BuscarMatchViewModel extends ViewModel{
 
     private MutableLiveData<String> mText;
 
-    public MisMatchesIndViewModel() {
+    public BuscarMatchViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is mis matches ind fragment");
+        mText.setValue("This is buscar match fragment");
     }
 
     public LiveData<String> getText() {

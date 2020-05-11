@@ -1,20 +1,19 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AmigosViewModel extends ViewModel {
+public class EditarPerfilViewModel extends ViewModel{
 
     private MutableLiveData<String> mText;
 
-    public AmigosViewModel() {
+    public EditarPerfilViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Amigos fragment");
+        mText.setValue("This is editar perfil fragment");
     }
 
     public LiveData<String> getText() {
         return mText;
     }
-
 }

@@ -1,4 +1,4 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,18 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import edu.escuelaing.matchmaking.R;
+import edu.escuelaing.matchmaking.ui.menu.viewmodel.BuscarMatchViewModel;
 
-public class CrearEquipoFragment extends Fragment{
+public class BuscarMatchFragment extends Fragment{
 
-    private CrearEquipoViewModel crearEquipoViewModel;
+    private BuscarMatchViewModel buscarMatchViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        crearEquipoViewModel =
-                ViewModelProviders.of(this).get(CrearEquipoViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_crear_equipo, container, false);
-        final TextView textView = root.findViewById(R.id.text_crear_equipo);
-        crearEquipoViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        buscarMatchViewModel =
+                ViewModelProviders.of(this).get(BuscarMatchViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_buarcar_match, container, false);
+        final TextView textView = root.findViewById(R.id.text_buscar_match);
+        buscarMatchViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
