@@ -60,10 +60,6 @@
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.EditarPerfilFragment"
         android:label="@string/edit_profile"
         tools:layout="@layout/fragment_editar_perfil" />
-    <fragment
-        android:id="@+id/nav_edit"
-        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.EditarPerfilFragment"
-        android:label="@string/edit_profile"
-        tools:layout="@layout/fragment_editar_perfil" />
+
 
 </navigation>
