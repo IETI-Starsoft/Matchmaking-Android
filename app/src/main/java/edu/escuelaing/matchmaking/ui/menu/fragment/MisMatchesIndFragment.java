@@ -1,4 +1,4 @@
-package edu.escuelaing.matchmaking.ui.menu;
+package edu.escuelaing.matchmaking.ui.menu.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import edu.escuelaing.matchmaking.R;
+import edu.escuelaing.matchmaking.ui.menu.viewmodel.MisMatchesIndViewModel;
 
 public class MisMatchesIndFragment extends Fragment{
 

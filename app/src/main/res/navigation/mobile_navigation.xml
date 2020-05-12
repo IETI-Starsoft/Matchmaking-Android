@@ -3,57 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_amigos">
+    app:startDestination="@id/nav_perfil">
 
     <fragment
+        android:id="@+id/nav_perfil"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.PerfilFragment"
+        android:label="@string/perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
         android:id="@+id/nav_amigos"
-        android:name="edu.escuelaing.matchmaking.ui.menu.AmigosFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.AmigosFragment"
         android:label="@string/amigos"
         tools:layout="@layout/fragment_amigos" />
     <fragment
         android:id="@+id/nav_mis_equipos"
-        android:name="edu.escuelaing.matchmaking.ui.menu.MisEquiposFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.MisEquiposFragment"
         android:label="@string/mis_equipos"
         tools:layout="@layout/fragment_mis_equipos" />
     <fragment
         android:id="@+id/nav_mis_matches"
-        android:name="edu.escuelaing.matchmaking.ui.menu.MisMatchesIndFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.MisMatchesIndFragment"
         android:label="@string/mis_matches"
         tools:layout="@layout/fragment_mis_matches_individual" />
     <fragment
         android:id="@+id/nav_mis_matches_team"
-        android:name="edu.escuelaing.matchmaking.ui.menu.MisMatchesTeamFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.MisMatchesTeamFragment"
         android:label="@string/mis_matches_team"
         tools:layout="@layout/fragment_mis_matches_equipo" />
     <fragment
         android:id="@+id/nav_crear_match"
-        android:name="edu.escuelaing.matchmaking.ui.menu.CrearMatchFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.CrearMatchFragment"
         android:label="@string/crear_match"
         tools:layout="@layout/fragment_crear_match" />
     <fragment
         android:id="@+id/nav_crear_equipo"
-        android:name="edu.escuelaing.matchmaking.ui.menu.CrearEquipoFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.CrearEquipoFragment"
         android:label="@string/crear_equipo"
         tools:layout="@layout/fragment_crear_equipo" />
     <fragment
         android:id="@+id/nav_buscar_match"
-        android:name="edu.escuelaing.matchmaking.ui.menu.BuscarMatchFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.BuscarMatchFragment"
         android:label="@string/buscar_match"
         tools:layout="@layout/fragment_buarcar_match" />
     <fragment
         android:id="@+id/nav_anadir_amigo"
-        android:name="edu.escuelaing.matchmaking.ui.menu.AnadirAmigoFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.AnadirAmigoFragment"
         android:label="@string/anadir_amigo"
         tools:layout="@layout/fragment_anadir_amigo" />
     <fragment
         android:id="@+id/nav_transferir"
-        android:name="edu.escuelaing.matchmaking.ui.menu.TransferirCreditosFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.TransferirCreditosFragment"
         android:label="@string/transferir"
         tools:layout="@layout/fragment_transferir_creditos" />
     <fragment
         android:id="@+id/nav_edit"
-        android:name="edu.escuelaing.matchmaking.ui.menu.EditarPerfilFragment"
+        android:name="edu.escuelaing.matchmaking.ui.menu.fragment.EditarPerfilFragment"
         android:label="@string/edit_profile"
         tools:layout="@layout/fragment_editar_perfil" />
+
 
 </navigation>

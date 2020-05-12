@@ -26,6 +26,10 @@
     <string name="crear_equipo">Crear Equipo</string>
     <string name="buscar_match">Buscar Match</string>
     <string name="anadir_amigo">Añadir Amigo</string>
-    <string name="transferir">Transferir Crèditos</string>
+    <string name="transferir">Transferir Créditos</string>
     <string name="edit_profile">Editar Perfil</string>
+    <string name="perfil">Perfil</string>
+    <string name="creditos">Créditos</string>
+    <string name="num_amigos">Amigos</string>
+    <string name="num_equipos">Equipos</string>
 </resources>

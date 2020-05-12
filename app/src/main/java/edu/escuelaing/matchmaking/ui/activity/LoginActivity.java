@@ -53,10 +53,10 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         Call<Token> call = retrofitNetwork.getAuthService().login(loginWrapper);
                         Response<Token> response = call.execute();
-                        System.out.println(response);
                         if (response.isSuccessful()) {
                             Token token = response.body();
                             storage.saveToken(token);
+                            storage.saveEmail(email.getText().toString());
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         } else {
