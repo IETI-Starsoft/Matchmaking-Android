@@ -40,6 +40,9 @@ public class PerfilFragment extends Fragment {
         final TextView textView = root.findViewById(R.id.name_perfil);
         final ImageView imageView = root.findViewById(R.id.userImage);
         final RatingBar ratingBar = root.findViewById(R.id.ratingBar);
+        final TextView credits = root.findViewById(R.id.numCreditos);
+        final TextView friends = root.findViewById(R.id.numAmigos);
+        final TextView teams = root.findViewById(R.id.numEquipos);
         ratingBar.setIsIndicator(true);
         perfilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -59,6 +62,27 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onChanged(Integer integer) {
                 ratingBar.setRating(integer);
+            }
+        });
+
+        perfilViewModel.getUserCredits().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                credits.setText(s);
+            }
+        });
+
+        perfilViewModel.getUserTotalFriends().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                friends.setText(s);
+            }
+        });
+
+        perfilViewModel.getUserTotalTeams().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                teams.setText(s);
             }
         });
         return root;

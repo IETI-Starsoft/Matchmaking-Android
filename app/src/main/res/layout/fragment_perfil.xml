@@ -45,4 +45,85 @@
         app:layout_constraintTop_toBottomOf="@+id/name_perfil"
         app:layout_constraintVertical_bias="0.036" />
 
+    <TextView
+        android:id="@+id/amigos_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/num_amigos"
+        app:layout_constraintBottom_toTopOf="@+id/equipos_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/creditos_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/creditos"
+        app:layout_constraintBottom_toTopOf="@+id/amigos_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.779" />
+
+    <TextView
+        android:id="@+id/equipos_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="@string/num_equipos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <TextView
+        android:id="@+id/numAmigos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/numEquipos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/amigos_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <TextView
+        android:id="@+id/numCreditos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/numAmigos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toEndOf="@+id/creditos_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.779" />
+
+    <TextView
+        android:id="@+id/numEquipos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="208dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toEndOf="@+id/equipos_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.907" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

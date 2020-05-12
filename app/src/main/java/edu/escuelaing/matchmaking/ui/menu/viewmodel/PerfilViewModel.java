@@ -26,6 +26,12 @@ public class PerfilViewModel extends ViewModel {
 
     private MutableLiveData<Integer> userRating;
 
+    private MutableLiveData<String> userTotalFriends;
+
+    private MutableLiveData<String> userCredits;
+
+    private MutableLiveData<String> userTotalTeams;
+
     private RetrofitNetwork retrofitNetwork;
 
     private String userEmail;
@@ -36,6 +42,9 @@ public class PerfilViewModel extends ViewModel {
         userNameText = new MutableLiveData<>();
         userImage = new MutableLiveData<>();
         userRating = new MutableLiveData<>();
+        userTotalFriends = new MutableLiveData<>();
+        userTotalTeams = new MutableLiveData<>();
+        userCredits = new MutableLiveData<>();
         userNameText.setValue("Loading ...");
     }
 
@@ -54,6 +63,9 @@ public class PerfilViewModel extends ViewModel {
                     User user = response.body();
                     userNameText.postValue(user.getFirstName() + " " +  user.getLastName());
                     userRating.postValue(user.getRating());
+                    userTotalFriends.postValue(String.valueOf(user.getFriends().size()));
+                    userTotalTeams.postValue(String.valueOf(user.getTeams().size()));
+                    userCredits.postValue(String.valueOf(user.getCredits()));
                     URL url = new URL(RetrofitNetwork.BASE_URL + "files/" + user.getUserId() + "/" + user.getImageFileURL());
                     Bitmap bmp = null;
                     bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
@@ -79,5 +91,17 @@ public class PerfilViewModel extends ViewModel {
 
     public LiveData<Integer> getUserRating() {
         return userRating;
+    }
+
+    public MutableLiveData<String> getUserTotalFriends() {
+        return userTotalFriends;
+    }
+
+    public MutableLiveData<String> getUserCredits() {
+        return userCredits;
+    }
+
+    public MutableLiveData<String> getUserTotalTeams() {
+        return userTotalTeams;
     }
 }
