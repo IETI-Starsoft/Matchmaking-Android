@@ -44,7 +44,7 @@
         android:id="@+id/nav_buscar_match"
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.BuscarMatchFragment"
         android:label="@string/buscar_match"
-        tools:layout="@layout/fragment_buarcar_match" />
+        tools:layout="@layout/fragment_buscar_match" />
     <fragment
         android:id="@+id/nav_anadir_amigo"
         android:name="edu.escuelaing.matchmaking.ui.menu.fragment.AnadirAmigoFragment"
