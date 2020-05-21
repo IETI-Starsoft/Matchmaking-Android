@@ -21,6 +21,13 @@ public class Team {
 
     private Double rating;
 
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
     public void setCalculateRating(Integer score) {
         Integer n=nRating;
         Double nScore=((rating*n)+score)/(n+1);
@@ -35,14 +42,7 @@ public class Team {
     public void setnRating(Integer nRating) {
         this.nRating = nRating;
     }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
+  
 
     public ArrayList<String> getMembers() {
         return members;
@@ -52,6 +52,14 @@ public class Team {
         this.members = members;
     }
 
+    public String getCaptainId() {
+        return captainId;
+    }
+
+    public void setCaptainId(String captainId) {
+        this.captainId = captainId;
+    }
+    
     public String getName() {
         return name;
     }
@@ -68,12 +76,20 @@ public class Team {
         this.credits = credits;
     }
 
-    public String getTeamId() {
-        return teamId;
+    public List<String> getActivities() {
+        return activities;
     }
 
-    public void setTeamId(String teamId) {
-        this.teamId = teamId;
+    public void setActivities(List<String> activities) {
+        this.activities = activities;
+    }
+  
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public void addCredits(Integer credits) {
@@ -90,21 +106,5 @@ public class Team {
                 ", captain='" + captainId + '\'' +
                 ", members='" + members.toString() + '\'' +
                 '}';
-    }
-
-    public String getCaptainId() {
-        return captainId;
-    }
-
-    public void setCaptainId(String captainId) {
-        this.captainId = captainId;
-    }
-
-    public List<String> getActivities() {
-        return activities;
-    }
-
-    public void setActivities(List<String> activities) {
-        this.activities = activities;
-    }
+    } 
 }
