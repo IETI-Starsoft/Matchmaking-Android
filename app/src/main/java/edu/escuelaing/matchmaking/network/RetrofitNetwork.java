@@ -2,8 +2,11 @@ package edu.escuelaing.matchmaking.network;
 
 import java.io.IOException;
 
+import edu.escuelaing.matchmaking.network.services.ActivityService;
 import edu.escuelaing.matchmaking.network.services.AuthService;
+import edu.escuelaing.matchmaking.network.services.TeamService;
 import edu.escuelaing.matchmaking.network.services.UserService;
+import edu.escuelaing.matchmaking.pojo.Team;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -17,6 +20,10 @@ public class RetrofitNetwork {
     private AuthService authService;
 
     private UserService userService;
+
+    private TeamService teamService;
+
+    private ActivityService activityService;
 
     public RetrofitNetwork() {
         Retrofit retrofit = new Retrofit.Builder().baseUrl( BASE_URL )
@@ -45,6 +52,8 @@ public class RetrofitNetwork {
                         httpClient.build()).build();
 
         userService = retrofit.create(UserService.class);
+        teamService = retrofit.create(TeamService.class);
+        activityService = retrofit.create(ActivityService.class);
     }
 
     public AuthService getAuthService() {
@@ -53,5 +62,11 @@ public class RetrofitNetwork {
 
     public UserService getUserService() {
         return userService;
+    }
+
+    public TeamService getTeamService() {return teamService;}
+
+    public ActivityService getActivityService() {
+        return activityService;
     }
 }

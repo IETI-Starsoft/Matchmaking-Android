@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <TextView
                 android:id="@+id/activity_title"
                 android:layout_width="wrap_content"
@@ -155,7 +156,7 @@
 
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/checkIndividual"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -167,11 +168,11 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.994"
-                app:layout_constraintStart_toEndOf="@+id/checkBox"
+                app:layout_constraintStart_toEndOf="@+id/checkGrupal"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkGrupal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -181,7 +182,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/activity_team"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+                app:layout_constraintEnd_toStartOf="@+id/checkIndividual"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -207,7 +208,31 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+                app:layout_constraintTop_toBottomOf="@+id/checkIndividual" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollTeams"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toTopOf="@+id/confirmar"
+                app:layout_constraintEnd_toStartOf="@+id/checkIndividual"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkGrupal">
+
+                <LinearLayout
+                    android:id="@+id/teams_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </androidx.core.widget.NestedScrollView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
