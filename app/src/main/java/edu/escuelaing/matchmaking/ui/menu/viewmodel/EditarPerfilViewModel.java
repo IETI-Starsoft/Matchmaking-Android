@@ -67,9 +67,6 @@ public class EditarPerfilViewModel extends ViewModel {
             user.setFirstName(name);
             user.setLastName("");
         }
-        if (!bio.isEmpty()){
-            //user.setBio
-        }
         Call<User> callUpdate = retrofitNetwork.getUserService().updateUser(user);
         Response<User> response = callUpdate.execute();
     }
