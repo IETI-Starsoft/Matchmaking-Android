@@ -22,5 +22,7 @@ public interface UserService {
     @GET("api/users/id/{userId}/teams")
     Call<List<Team>> getTeams(@Path("userId") String userId);
 
+    @GET("api/users/id/{userId}")
+    Call<User> getUserById(@Path("userId") String userId);
 
 }
