@@ -45,8 +45,8 @@
     <string name="activity_details">Detalles</string>
     <string name="activity_back">Atras</string>
     <string name="activity_amount">Tarifa de suscripción</string>
-    <string name="activity_date">Fecha</string>
-    <string name="activity_time">Hora</string>
+    <string name="activity_date">Fecha yyyy-MM-dd</string>
+    <string name="activity_time">Hora HH:mm</string>
     <string name="activity_player">Retador</string>
     <string name="activity_label">Actividad</string>
     <string name="activity_time_label">Hora</string>

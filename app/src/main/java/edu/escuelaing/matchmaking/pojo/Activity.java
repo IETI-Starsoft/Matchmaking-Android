@@ -2,9 +2,10 @@ package edu.escuelaing.matchmaking.pojo;
 
 import java.util.Date;
 
-public abstract class Activity {
-    private Date date;
-    private Date publicationDate;
+public class Activity {
+    private String typ;
+    private String date;
+    private String publicationDate;
     private int bet;
     private String description;
     private String type;
@@ -15,10 +16,10 @@ public abstract class Activity {
     private State state;
     private String owner;
 
+    public Activity(){}
 
-
-
-    public Activity(Date date, Date publicationDate, int bet, String description, String type, String location, Integer credits, String winner, String loser, State state, String owner) {
+    public Activity(String typ, String date, String publicationDate, int bet, String description, String type, String location, Integer credits, String winner, String loser, State state, String owner) {
+        this.typ = typ;
         this.date = date;
         this.publicationDate = publicationDate;
         this.bet = bet;
@@ -32,19 +33,19 @@ public abstract class Activity {
         this.owner = owner;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Date getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
-    public void setPublicationDate(Date publicationDate) {
+    public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
     }
 
@@ -120,4 +121,29 @@ public abstract class Activity {
         this.owner = owner;
     }
 
+    public String getTyp() {
+        return typ;
+    }
+
+    public void setTyp(String typ) {
+        this.typ = typ;
+    }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "typ='" + typ + '\'' +
+                ", date=" + date +
+                ", publicationDate=" + publicationDate +
+                ", bet=" + bet +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                ", location='" + location + '\'' +
+                ", credits=" + credits +
+                ", winner='" + winner + '\'' +
+                ", loser='" + loser + '\'' +
+                ", state=" + state +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
 }

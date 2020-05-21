@@ -33,14 +33,14 @@ import retrofit2.Response;
 public class CrearMatchViewModel extends ViewModel{
 
     private String userId;
-    private MutableLiveData<String> activity;
-    private MutableLiveData<String> location;
-    private MutableLiveData<String> description;
+    private String activity;
+    private String location;
+    private String description;
     private String date;
     private String time;
     private Integer indexTeam;
     private Integer bet;
-    private MutableLiveData<String> participants;
+    private String participants;
     private RetrofitNetwork retrofitNetwork;
 
 
@@ -49,10 +49,6 @@ public class CrearMatchViewModel extends ViewModel{
     private String email;
 
     public CrearMatchViewModel() {
-        activity = new MutableLiveData<>();
-        location = new MutableLiveData<>();
-        description = new MutableLiveData<>();
-        participants = new MutableLiveData<>();
     }
 
 
@@ -84,15 +80,36 @@ public class CrearMatchViewModel extends ViewModel{
         });
     }
 
-    private void postActivity(final Activity activity){
+    private void postIndividualActivity(final IndividualActivity activity){
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                Call<Activity> call = retrofitNetwork.getActivityService().createActivity(activity);
+                Call<Activity> call = retrofitNetwork.getActivityService().createIndividualActivity(activity);
+
+                System.out.println("activity " + activity.toString());
                 try {
                     Response<Activity> response = call.execute();
+                    System.out.println("response2 " + response);
                     Activity activity = response.body();
-                    System.out.println(activity.getType());
+                    System.out.println("actividad " + activity);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void postGroupActivity(final GroupActivity activity){
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                Call<Activity> call = retrofitNetwork.getActivityService().createGroupActivity(activity);
+                try {
+                    Response<Activity> response = call.execute();
+                    System.out.println("response " + response);
+                    Activity activity = response.body();
+                    System.out.println("actividad " + activity);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -102,39 +119,34 @@ public class CrearMatchViewModel extends ViewModel{
 
 
     public void createIndividualActivity(){
-        String pattern = "yyyy-MM-dd HH:mm:ss";
+        String pattern = "yyyy-MM-dd'T'HH:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = this.date + " " +this.time;
-        Date gameDate = new Date();
-        Date publicationDate = new Date();
+        String date = this.date + 'T' +this.time + ":00";
+        String publicationDate = "";
         try {
-            gameDate = simpleDateFormat.parse(date);
-            publicationDate = simpleDateFormat.parse(simpleDateFormat.format(publicationDate));
-        } catch (ParseException e) {
+            publicationDate = (simpleDateFormat.format(new Date()));
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        Activity activity = new IndividualActivity(gameDate,publicationDate,this.bet,description.getValue(),
-                this.activity.getValue(),location.getValue(),0,null,null, State.Available,getUserId(),getUserId(),null);
-        postActivity(activity);
+        IndividualActivity activity = new IndividualActivity("IndividualActivity",date,publicationDate,this.bet,this.description,
+                this.activity,this.location,0,null,null, State.Available,getUserId(),getUserId(),null);
+        postIndividualActivity(activity);
     }
 
     public void createGroupActivity(){
-        String pattern = "yyyy-MM-dd HH:mm:ss";
+        String pattern = "yyyy-MM-dd'T'HH:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = this.date + " " + this.time;
-        Date gameDate = new Date();
-        Date publicationDate = new Date();
+        String date = this.date + 'T' +this.time + ":00";
+        String publicationDate = "";
         try {
-            gameDate = simpleDateFormat.parse(date);
-            publicationDate = simpleDateFormat.parse(simpleDateFormat.format(publicationDate));
-        } catch (ParseException e) {
+            publicationDate = (simpleDateFormat.format(new Date()));
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        Activity activity = new GroupActivity(gameDate,publicationDate,this.bet,description.getValue(),
-                this.activity.getValue(),location.getValue(),0,null,null, State.Available,userTeams.get(indexTeam).getTeamId(),userTeams.get(indexTeam).getTeamId(),null);
-        postActivity(activity);
+       GroupActivity activity = new GroupActivity("GroupActivity",date,publicationDate,this.bet,this.description,
+                this.activity,this.location,0,null,null, State.Available,getUserId(),userTeams.get(indexTeam).getTeamId(),null);
+        postGroupActivity(activity);
     }
-
 
 
     public void setEmail(String email) {
@@ -145,19 +157,16 @@ public class CrearMatchViewModel extends ViewModel{
         return userTeams;
     }
 
-    public void setParticipants(String participants) {
-        this.participants.postValue(participants);
-    }
 
-    public MutableLiveData<String> getActivity() {
+    public String getActivity() {
         return activity;
     }
 
-    public MutableLiveData<String> getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public MutableLiveData<String> getDescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -173,7 +182,7 @@ public class CrearMatchViewModel extends ViewModel{
         return bet;
     }
 
-    public MutableLiveData<String> getParticipants() {
+    public String getParticipants() {
         return participants;
     }
     public void setUserTeams(ArrayList<Team> userTeams) {
@@ -196,17 +205,6 @@ public class CrearMatchViewModel extends ViewModel{
         this.userId = userId;
     }
 
-    public void setActivity(String activity) {
-        this.activity.postValue(activity);
-    }
-
-    public void setLocation(String location) {
-        this.location.postValue(location);
-    }
-
-    public void setDescription(String description) {
-        this.description.postValue(description);
-    }
 
     public void setDate(String date) {
         this.date = date;
@@ -221,4 +219,23 @@ public class CrearMatchViewModel extends ViewModel{
         else this.bet = Integer.valueOf(bet);
     }
 
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setBet(Integer bet) {
+        this.bet = bet;
+    }
+
+    public void setParticipants(String participants) {
+        this.participants = participants;
+    }
 }

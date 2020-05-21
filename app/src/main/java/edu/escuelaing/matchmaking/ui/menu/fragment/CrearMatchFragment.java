@@ -150,10 +150,10 @@ public class CrearMatchFragment extends Fragment  {
     }
 
     public void validateParticipants(){
-        if (crearMatchViewModel.getParticipants().getValue().equals("IndividualActivity")){
+        if (crearMatchViewModel.getParticipants().equals("IndividualActivity")){
             postActiivty(true);
         }
-        else if (crearMatchViewModel.getParticipants().getValue().equals("GroupActivity")){
+        else if (crearMatchViewModel.getParticipants().equals("GroupActivity")){
             validateGroup();
         }
     }
