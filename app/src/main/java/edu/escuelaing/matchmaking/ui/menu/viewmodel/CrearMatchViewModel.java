@@ -1,19 +1,19 @@
 package edu.escuelaing.matchmaking.ui.menu.viewmodel;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Looper;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,6 +42,8 @@ public class CrearMatchViewModel extends ViewModel{
     private Integer bet;
     private String participants;
     private RetrofitNetwork retrofitNetwork;
+    private Context context;
+
 
 
     private final ExecutorService executorService = Executors.newFixedThreadPool( 1 );
@@ -51,14 +53,10 @@ public class CrearMatchViewModel extends ViewModel{
     public CrearMatchViewModel() {
     }
 
-
-
     public void setRetrofitNetwork(RetrofitNetwork retrofitNetwork) {
         this.retrofitNetwork = retrofitNetwork;
         update();
     }
-
-
 
     private void update() {
         executorService.execute(new Runnable() {
@@ -82,17 +80,25 @@ public class CrearMatchViewModel extends ViewModel{
 
     private void postIndividualActivity(final IndividualActivity activity){
         executorService.execute(new Runnable() {
+
             @Override
             public void run() {
+
                 Call<Activity> call = retrofitNetwork.getActivityService().createIndividualActivity(activity);
 
-                System.out.println("activity " + activity.toString());
                 try {
                     Response<Activity> response = call.execute();
                     System.out.println("response2 " + response);
                     Activity activity = response.body();
                     System.out.println("actividad " + activity);
+                    Looper.prepare();
+                    Toast.makeText(getContext(), "Actividad registrada", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
+                    //new AlertDialog.Builder(getContext()).setTitle("Modify Customer Details").create();;
                 } catch (IOException e) {
+                    Looper.prepare();
+                    Toast.makeText(getContext(), "No se pudo registrar la actividad", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
                     e.printStackTrace();
                 }
             }
@@ -109,8 +115,14 @@ public class CrearMatchViewModel extends ViewModel{
                     System.out.println("response " + response);
                     Activity activity = response.body();
                     System.out.println("actividad " + activity);
+                    Looper.prepare();
+                    Toast.makeText(getContext(), "Actividad registrada", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
 
                 } catch (IOException e) {
+                    Looper.prepare();
+                    Toast.makeText(getContext(), "No se pudo registrar la actividad", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
                     e.printStackTrace();
                 }
             }
@@ -146,6 +158,14 @@ public class CrearMatchViewModel extends ViewModel{
        GroupActivity activity = new GroupActivity("GroupActivity",date,publicationDate,this.bet,this.description,
                 this.activity,this.location,0,null,null, State.Available,getUserId(),userTeams.get(indexTeam).getTeamId(),null);
         postGroupActivity(activity);
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
 

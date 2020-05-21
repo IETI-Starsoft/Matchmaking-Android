@@ -46,6 +46,7 @@ public class CrearMatchFragment extends Fragment  {
         final RetrofitNetwork retrofitNetwork = new RetrofitNetwork(storage.getToken());
         crearMatchViewModel.setEmail(storage.getEmail());
         crearMatchViewModel.setRetrofitNetwork(retrofitNetwork);
+        crearMatchViewModel.setContext(mContext);
         root = inflater.inflate(R.layout.fragment_crear_match, container, false);
         root.findViewById(R.id.suscription).setVisibility(View.INVISIBLE);
 
