@@ -8,21 +8,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.menu.fragment.AmigosFragment">
 
-
-
-
     <TextView
-        android:id="@+id/text_editar_perfil"
-        android:layout_width="match_parent"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:text="@string/editar_perfil"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editName"
+        android:layout_width="213dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="100dp"
+        android:hint="@string/nombre"
+        app:layout_constraintBottom_toTopOf="@+id/editBio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/editBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="121dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="76dp"
+        android:background="#71db77"
+        android:text="@string/actualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
